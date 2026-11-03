@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Intervention {
+  id               Int      @id @default(autoincrement())
+  datetime         DateTime @default(now())
+  streetAndNumber  String
+  colony           String
+  userName         String
+  gasCompany       String
+  cylinderCapacity String
+  damageTypes      String   // Store as JSON string since SQLite doesn't support String[]
+  observations     String?
+  finalStatus      String
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
