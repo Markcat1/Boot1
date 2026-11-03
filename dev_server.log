@@ -1,0 +1,22 @@
+
+> pipc-app@0.1.0 dev
+> next dev
+
+▲ Next.js 16.4.4 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+✓ Ready in 660ms
+✓ Running next.config.ts took 60ms
+- Cache Components enabled
+- Partial Prefetching enabled
+
+○ Compiling / ...
+ GET / 200 in 1776ms (next.js: 951ms, application-code: 825ms)
+ GET /diagnostico 200 in 82ms (next.js: 17ms, application-code: 66ms)
+ GET / 200 in 76ms (next.js: 3ms, application-code: 74ms)
+ GET /diagnostico 200 in 78ms (next.js: 9ms, application-code: 68ms)
+ GET /riesgos 200 in 66ms (next.js: 13ms, application-code: 53ms)
+ GET / 200 in 67ms (next.js: 2ms, application-code: 65ms)
+ GET /diagnostico 200 in 53ms (next.js: 4ms, application-code: 49ms)
+ GET /riesgos 200 in 50ms (next.js: 2ms, application-code: 48ms)
+ GET /exportacion 200 in 119ms (next.js: 15ms, application-code: 103ms)
