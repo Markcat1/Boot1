@@ -1,0 +1,17 @@
+
+> my-app@0.1.0 dev
+> next dev
+
+▲ Next.js 16.4.5 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+✓ Ready in 557ms
+✓ Running next.config.ts took 50ms
+- Cache Components enabled
+- Partial Prefetching enabled
+
+ GET /form 200 in 660ms (next.js: 308ms, application-code: 352ms)
+ POST /api/interventions 201 in 185ms (next.js: 95ms, application-code: 91ms)
+ GET /dashboard 200 in 358ms (next.js: 25ms, application-code: 333ms)
+ GET /api/interventions 200 in 17ms (next.js: 3ms, application-code: 14ms)
+ GET /api/interventions 200 in 14ms (next.js: 3ms, application-code: 11ms)
