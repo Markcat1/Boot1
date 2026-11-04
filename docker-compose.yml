@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgis/postgis:15-3.3
+    container_name: safezmg_db
+    environment:
+      POSTGRES_USER: safezmg_user
+      POSTGRES_PASSWORD: safezmg_password
+      POSTGRES_DB: safezmg
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: always
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: safezmg_backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://safezmg_user:safezmg_password@db:5432/safezmg
+    depends_on:
+      - db
+    volumes:
+      - ./backend:/app
+    restart: always
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: safezmg_frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+    restart: always
+
+volumes:
+  postgres_data:
