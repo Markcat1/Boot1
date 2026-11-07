@@ -1,0 +1,7 @@
+node_modules/
+dist/
+__pycache__/
+pipc-app/backend/routers/__pycache__/
+.pytest_cache/
+
+pipc-app/frontend/node_modules/
